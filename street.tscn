@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bpucbvr0nacn6"]
+
+[ext_resource type="PackedScene" uid="uid://dramxp70o4jbr" path="res://player.tscn" id="1_4f3h7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_or6pn"]
+size = Vector2(800, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgot"]
+size = Vector2(800, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_su6wx"]
+size = Vector2(20, 600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r2b1w"]
+size = Vector2(20, 600)
+
+[node name="Street" type="Node2D" unique_id=851524422]
+
+[node name="WallTop" type="StaticBody2D" parent="." unique_id=836291978]
+position = Vector2(400, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop" unique_id=2073780470]
+shape = SubResource("RectangleShape2D_or6pn")
+
+[node name="WallBottom" type="StaticBody2D" parent="." unique_id=553121733]
+position = Vector2(400, 600)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallBottom" unique_id=980757031]
+shape = SubResource("RectangleShape2D_nlgot")
+
+[node name="WallLeft" type="StaticBody2D" parent="." unique_id=1898627972]
+position = Vector2(0, 300)
+constant_linear_velocity = Vector2(0, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft" unique_id=1872297972]
+shape = SubResource("RectangleShape2D_su6wx")
+
+[node name="WallRight" type="StaticBody2D" parent="." unique_id=440842446]
+position = Vector2(800, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight" unique_id=1473850508]
+shape = SubResource("RectangleShape2D_r2b1w")
+
+[node name="CharacterBody2D" parent="." unique_id=1730639933 instance=ExtResource("1_4f3h7")]
+position = Vector2(400, 300)

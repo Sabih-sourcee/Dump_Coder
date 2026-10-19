@@ -11,7 +11,7 @@ func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO
 	if Input.is_action_pressed("ui_right"):
 		direction.x = 1
-	
+
 	if Input.is_action_pressed("ui_left"):
 		direction.x = -1
 	
@@ -21,6 +21,5 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("ui_down"):
 		direction.y = 1
 	velocity = direction.normalized() * 200
-	print(direction, " ", velocity)
 
 	move_and_slide()
