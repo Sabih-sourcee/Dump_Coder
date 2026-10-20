@@ -2,66 +2,106 @@
 
 [ext_resource type="PackedScene" uid="uid://dramxp70o4jbr" path="res://player.tscn" id="1_hfkix"]
 [ext_resource type="Script" uid="uid://5tmjlmrys6t0" path="res://exit_door.gd" id="1_metfq"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_metfq"]
-size = Vector2(400, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgot"]
-size = Vector2(150, 20)
+[ext_resource type="Texture2D" uid="uid://duxsyidjqm20e" path="res://assets/house.jpg" id="1_o1325"]
+[ext_resource type="Script" uid="uid://ccram7vt05c7r" path="res://top_door.gd" id="3_6syyc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r2b1w"]
-size = Vector2(150, 20)
+size = Vector2(932, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_10qhy"]
+size = Vector2(914, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o1325"]
-size = Vector2(20, 300)
+size = Vector2(18, 933)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vy7fe"]
-size = Vector2(20, 300)
+size = Vector2(20, 938)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_or6pn"]
 size = Vector2(40, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_su6wx"]
+size = Vector2(40, 20)
+
 [node name="House" type="Node2D" unique_id=951353004]
 
-[node name="WallTop" type="StaticBody2D" parent="." unique_id=869091546]
-position = Vector2(200, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop" unique_id=1444840031]
-shape = SubResource("RectangleShape2D_metfq")
-
-[node name="WallBottomLeft" type="StaticBody2D" parent="." unique_id=346783653]
-position = Vector2(75, 300)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WallBottomLeft" unique_id=1212938452]
-shape = SubResource("RectangleShape2D_nlgot")
+[node name="Background" type="Sprite2D" parent="." unique_id=572000789]
+position = Vector2(400, 300)
+texture = ExtResource("1_o1325")
 
 [node name="WallBottomRight" type="StaticBody2D" parent="." unique_id=2086663189]
 position = Vector2(325, 300)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallBottomRight" unique_id=1654753589]
+position = Vector2(76, 456)
 shape = SubResource("RectangleShape2D_r2b1w")
+
+[node name="WallTopLeft" type="StaticBody2D" parent="." unique_id=2105145801]
+position = Vector2(75, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTopLeft" unique_id=42221988]
+position = Vector2(338, -156.5)
+shape = SubResource("RectangleShape2D_10qhy")
 
 [node name="WallLeft" type="StaticBody2D" parent="." unique_id=1119890173]
 position = Vector2(0, 150)
 constant_linear_velocity = Vector2(0, 300)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft" unique_id=519317862]
+position = Vector2(-56, 149.5)
 shape = SubResource("RectangleShape2D_o1325")
 
 [node name="WallRight" type="StaticBody2D" parent="." unique_id=919087275]
 position = Vector2(400, 150)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight" unique_id=458435810]
+position = Vector2(457, 149)
 shape = SubResource("RectangleShape2D_vy7fe")
 
 [node name="ExitDoor" type="Area2D" parent="." unique_id=1828237318]
-position = Vector2(200, 290)
+position = Vector2(71, 79)
 script = ExtResource("1_metfq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitDoor" unique_id=225588511]
 shape = SubResource("RectangleShape2D_or6pn")
 
+[node name="ColorRect" type="ColorRect" parent="ExitDoor" unique_id=1707323315]
+offset_left = -20.0
+offset_top = -10.0
+offset_right = 20.0
+offset_bottom = 10.0
+color = Color(0.78431374, 0.40392157, 0.007843138, 1)
+
 [node name="CharacterBody2D" parent="." unique_id=1730639933 instance=ExtResource("1_hfkix")]
 position = Vector2(200, 150)
 
+[node name="TopDoor" type="Area2D" parent="." unique_id=127694233]
+position = Vector2(737, 93)
+script = ExtResource("3_6syyc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopDoor" unique_id=1610148848]
+shape = SubResource("RectangleShape2D_su6wx")
+
+[node name="ColorRect" type="ColorRect" parent="TopDoor" unique_id=836316673]
+offset_left = -20.0
+offset_top = -10.0
+offset_right = 20.0
+offset_bottom = 10.0
+color = Color(0.7831447, 0.405692, 0.009690068, 1)
+
+[node name="Garage" type="Label" parent="." unique_id=1308267602]
+offset_left = 723.0
+offset_top = -90.0
+offset_right = 779.0
+offset_bottom = -67.0
+text = "Garage"
+
+[node name="Street" type="Label" parent="." unique_id=866153528]
+offset_left = 19.0
+offset_top = -75.0
+offset_right = 75.0
+offset_bottom = -52.0
+text = "Street"
+
 [connection signal="body_entered" from="ExitDoor" to="ExitDoor" method="_on_body_entered"]
+[connection signal="body_entered" from="TopDoor" to="TopDoor" method="_on_body_entered"]
