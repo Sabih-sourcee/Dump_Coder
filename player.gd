@@ -22,4 +22,5 @@ func _physics_process(delta: float) -> void:
 		direction.y = 1
 	velocity = direction.normalized() * 200
 
+	print(direction.x, direction.y)
 	move_and_slide()
