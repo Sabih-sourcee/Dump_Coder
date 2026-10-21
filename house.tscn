@@ -73,7 +73,7 @@ offset_bottom = 10.0
 color = Color(0.78431374, 0.40392157, 0.007843138, 1)
 
 [node name="CharacterBody2D" parent="." unique_id=1730639933 instance=ExtResource("1_hfkix")]
-position = Vector2(200, 150)
+position = Vector2(252, 574)
 
 [node name="TopDoor" type="Area2D" parent="." unique_id=127694233]
 position = Vector2(737, 93)

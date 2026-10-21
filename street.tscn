@@ -24,7 +24,7 @@ size = Vector2(40, 20)
 [node name="Street" type="Node2D" unique_id=851524422]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=820906716]
-position = Vector2(400, 300)
+position = Vector2(410, 190)
 texture = SubResource("CompressedTexture2D_j6lt3")
 
 [node name="WallTop" type="StaticBody2D" parent="." unique_id=836291978]
