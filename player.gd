@@ -3,8 +3,7 @@ extends CharacterBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -23,3 +22,14 @@ func _physics_process(delta: float) -> void:
 	velocity = direction.normalized() * 200
 
 	move_and_slide()
+
+	if velocity.x > 0:
+		$AnimatedSprite2D.play("walk_right")
+	elif velocity.x < 0:
+		$AnimatedSprite2D.play("walk_left")
+	elif velocity.y > 0:
+		$AnimatedSprite2D.play("walk_down")
+	elif velocity.y < 0:
+		$AnimatedSprite2D.play("walk_up")
+	else:
+		$AnimatedSprite2D.play("stop")

@@ -21,7 +21,7 @@ size = Vector2(20, 938)
 size = Vector2(40, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_su6wx"]
-size = Vector2(40, 20)
+size = Vector2(57, 141)
 
 [node name="House" type="Node2D" unique_id=951353004]
 
@@ -65,29 +65,16 @@ script = ExtResource("1_metfq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitDoor" unique_id=225588511]
 shape = SubResource("RectangleShape2D_or6pn")
 
-[node name="ColorRect" type="ColorRect" parent="ExitDoor" unique_id=1707323315]
-offset_left = -20.0
-offset_top = -10.0
-offset_right = 20.0
-offset_bottom = 10.0
-color = Color(0.78431374, 0.40392157, 0.007843138, 1)
-
 [node name="CharacterBody2D" parent="." unique_id=1730639933 instance=ExtResource("1_hfkix")]
-position = Vector2(252, 574)
+position = Vector2(728, 250)
 
 [node name="TopDoor" type="Area2D" parent="." unique_id=127694233]
 position = Vector2(737, 93)
 script = ExtResource("3_6syyc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopDoor" unique_id=1610148848]
+position = Vector2(-8.5, -60.5)
 shape = SubResource("RectangleShape2D_su6wx")
-
-[node name="ColorRect" type="ColorRect" parent="TopDoor" unique_id=836316673]
-offset_left = -20.0
-offset_top = -10.0
-offset_right = 20.0
-offset_bottom = 10.0
-color = Color(0.7831447, 0.405692, 0.009690068, 1)
 
 [node name="Garage" type="Label" parent="." unique_id=1308267602]
 offset_left = 723.0
